@@ -44,10 +44,10 @@ def get_comment_sentiment(downloader,analyzer,link):
 
 
         
-        if compound_score > 0.05:
-            sentiments['sentiment'].append(2)
-        elif compound_score <-0.05:
+        if compound_score >= 0.05:
             sentiments['sentiment'].append(1)
+        elif compound_score <= -0.05:
+            sentiments['sentiment'].append(-1)
         else:
             sentiments['sentiment'].append(0)
         
@@ -61,7 +61,7 @@ def main():
     analyzer = SentimentIntensityAnalyzer()
     sentiment = get_comment_sentiment(downloader,analyzer,link)
 
-    #print(sentiment)
+    print(sentiment)
 
 
 
