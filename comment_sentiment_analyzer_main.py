@@ -64,13 +64,6 @@ def main():
     #sets up analyzer, Lexicon, and Youtbue comment downloader
     nltk.download('vader_lexicon')
     downloader = YoutubeCommentDownloader()
-<<<<<<< Updated upstream
-    link = input('Input YouTube Link here: ')
-    range = input('Enter Sentiment Threshold: ')
-
-    analyzer = SentimentIntensityAnalyzer()
-    sentiment = get_comment_sentiment(downloader,analyzer,link,range)
-=======
     analyzer = SentimentIntensityAnalyzer()
     
     #Gets user Input
@@ -79,7 +72,6 @@ def main():
     
     #Gets sentiment of YOutube Comments
     sentiment = get_comment_sentiment(downloader,analyzer,link)
->>>>>>> Stashed changes
 
     print(sentiment)
 
